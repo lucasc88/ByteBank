@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewTransferComponent } from './new-transfer/new-transfer.component';
+import { StatementComponent } from './statement/statement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewTransferComponent
+    NewTransferComponent,
+    StatementComponent
   ],
   imports: [
     BrowserModule,

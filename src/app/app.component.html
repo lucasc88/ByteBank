@@ -1,6 +1,5 @@
 <app-new-transfer (afterSubmit)="transfer($event)"></app-new-transfer>
 
-<!--? symbol checks if there is some value filled in the variable-->
-<!--or u can remove ? and initialize the objectTransfer in the component-->
-<p>Value: {{objectTransfer?.value}}</p>
-<p>Destination: {{objectTransfer?.destination}}</p>
+<!--The @Input() in the StatementComponent gets the EventEmitter from the 
+    NewTransferComponent using the AppComponent-->
+<app-statement [receiverObjectTransfer]="objectTransfer"></app-statement>
