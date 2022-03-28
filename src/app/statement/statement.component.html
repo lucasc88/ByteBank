@@ -1,4 +1,18 @@
-<!--? symbol checks if there is some value filled in the variable-->
-<!--or u can remove ? and initialize the objectTransfer in the component-->
-<p>Value: {{receiverObjectTransfer?.value}}</p>
-<p>Destination: {{receiverObjectTransfer?.destination}}</p>
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Destination</th>
+    </thead>
+    <tbody>
+        <!--*ngFor to repeat the values inside the array-->
+        <!--? symbol checks if there is some value filled in the variable-->
+        <!--or u can remove ? and initialize the receiverObjectsTransfer in the component-->
+        <tr *ngFor="let transfer of receiverObjectsTransfer">
+            <td>{{transfer?.date | date: "short"}}</td>
+            <!--show date in a short way-->
+            <td>{{transfer?.value}}</td>
+            <td>{{transfer?.destination}}</td>
+        </tr>
+    </tbody>
+</table>
