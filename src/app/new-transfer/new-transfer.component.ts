@@ -15,12 +15,12 @@ export class NewTransferComponent {
   destination: number;
 
   transfer() {
-    const valueToSend = {value: this.value, destination: this.destination};
+    const valueToSend = { value: this.value, destination: this.destination };
     this.afterSubmit.emit(valueToSend);
     this.clear();
   }
 
-  clear(){
+  clear() {
     this.value = 0;
     this.destination = 0;
   }
