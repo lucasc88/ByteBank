@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+
   objectTransfer: any; //objectTransfer was not initilized but its template is using ? symbol
 
-  transfer($event){
+  transfer($event) {
     console.log($event);
     this.objectTransfer = $event;
   }
 
-  
+
 }
