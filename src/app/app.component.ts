@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ByteBank';
+  
+  objectTransfer: any; //objectTransfer was not initilized but its template is using ? symbol
+
+  transfer($event){
+    console.log($event);
+    this.objectTransfer = $event;
+  }
+
+  
 }
