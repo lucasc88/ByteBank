@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransferService } from './services/transfer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  objectsTransfer: any[] = []; //objectsTransfer array initialized
+  //service injection using its constructor
+  constructor(private service: TransferService){}
 
   transfer($event) {
-    console.log($event);
-
-    //add date using spread operator, it gets only the data inside the array and add Date
-    const transferWithDate = {...$event, date: new Date()};
-    this.objectsTransfer.push(transferWithDate);
+    this.service.add($event);
   }
 
 
