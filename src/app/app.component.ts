@@ -9,11 +9,5 @@ import { TransferService } from './services/transfer.service';
 export class AppComponent {
 
   //service injection using its constructor
-  constructor(private service: TransferService){}
-
-  transfer($event) {
-    this.service.add($event);
-  }
-
-
+  constructor(private service: TransferService) { }
 }

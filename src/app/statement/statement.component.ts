@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Transfer } from '../models/transfer.model';
 import { TransferService } from '../services/transfer.service';
 
 @Component({
@@ -12,10 +13,15 @@ export class StatementComponent implements OnInit {
   //@Input()
   receiverObjectsTransfer: any = [];
 
+  //service injection
   constructor(private service: TransferService) { }
 
+  
   ngOnInit(): void {
-    this.receiverObjectsTransfer = this.service.transfers;
+    this.service.allTransfers().subscribe((transfers: Transfer[]) => {
+      console.table(transfers);
+      this.receiverObjectsTransfer = transfers;
+    })
   }
 
 }

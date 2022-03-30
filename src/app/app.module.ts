@@ -8,6 +8,7 @@ import { NewTransferComponent } from './new-transfer/new-transfer.component';
 import { StatementComponent } from './statement/statement.component';
 import localeIe from '@angular/common/locales/en-IE';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeIe, 'en-IE');//to format the date
 
@@ -20,7 +21,8 @@ registerLocaleData(localeIe, 'en-IE');//to format the date
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en-IE' },//to format the date
