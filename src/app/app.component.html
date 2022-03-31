@@ -1,3 +1,16 @@
-<app-new-transfer></app-new-transfer>
+<!--router-outlet is the component that uses the settings in AppRoutingModule
+to call the other components.
+    routerLink load only the component needed-->
+<header>
+    <a routerLink="statement">Byte Bank</a>
+    <a routerLink="new-transfer" routerLinkActive="active">New Transfer</a>
+</header>
+<main>
+<router-outlet></router-outlet>
+</main>
 
-<app-statement></app-statement>
+
+
+<!--the other components are no longer needed
+<app-new-transfer></app-new-transfer>
+<app-statement></app-statement>-->

@@ -1,26 +1,29 @@
-<table class="table">
-    <thead class="table__header">
-        <th class="table__header__content">Date</th>
-        <th class="table__header__content">Amount</th>
-        <th class="table__header__content">Destination</th>
-    </thead>
-    <tbody *ngIf="receiverObjectsTransfer.length > 0; else emptyList">
-        <!--*ngFor to repeat the values inside the array-->
-        <!--? symbol checks if there is some value filled in the variable-->
-        <!--or u can remove ? and initialize the receiverObjectsTransfer in the component-->
-        <tr class="table__line" *ngFor="let transfer of receiverObjectsTransfer">
+<section class="container">
+    <h2>Transfers</h2>
+    <table class="table">
+        <thead class="table__header">
+            <th class="table__header__content">Date</th>
+            <th class="table__header__content">Amount</th>
+            <th class="table__header__content">Destination</th>
+        </thead>
+        <tbody *ngIf="receiverObjectsTransfer.length > 0; else emptyList">
+            <!--*ngFor to repeat the values inside the array-->
+            <!--? symbol checks if there is some value filled in the variable-->
+            <!--or u can remove ? and initialize the receiverObjectsTransfer in the component-->
+            <tr class="table__line" *ngFor="let transfer of receiverObjectsTransfer">
 
-            <!--show date in a short way-->
-            <td class="table__content">{{transfer?.date | date: "short"}}</td>
-            
-            <!--show in Euro-->
-            <td class="table__content">{{transfer?.value | currency}}</td>
-            <td class="table__content">{{transfer?.destination}}</td>
-        </tr>
-    </tbody>
-</table>
+                <!--show date in a short way-->
+                <td class="table__content">{{transfer?.date | date: "short"}}</td>
 
-<!--if the array is empty, the message below appears because the *ngIF-->
-<ng-template #emptyList>
-    <p>No Transfers</p>
-</ng-template>
+                <!--show in Euro-->
+                <td class="table__content">{{transfer?.value | currency}}</td>
+                <td class="table__content">{{transfer?.destination}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--if the array is empty, the message below appears because the *ngIF-->
+    <ng-template #emptyList>
+        <p>No Transfers</p>
+    </ng-template>
+</section>
